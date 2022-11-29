@@ -3,8 +3,8 @@ import converter from "json-2-csv";
 
 $.verbose = false;
 
-let dataRaw = await fs.readFile("./data.txt", "utf-8");
-dataRaw = dataRaw.replace(/[|]/g, ",");
+let dataRaw = await fs.readFile("./data-test.txt", "latin1");
+dataRaw = (dataRaw.normalize("NFD").replace(/[\u0300-\u036f]/g, "")).replace(/[|]/g, ",");
 
 const jsonRaw = await converter.csv2jsonAsync(dataRaw);
 const settlements = [];
