@@ -1,6 +1,6 @@
-# Reto Técnico Backbone
-## Descripción
-Api Rest que consulta los datos dirección con base en un código postal 
+# Technical Challenge Backbone
+## Description
+Rest Api that queries address data based on a postal code
 
 ## Approach to the problem
 
