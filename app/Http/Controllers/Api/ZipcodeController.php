@@ -13,11 +13,13 @@ class ZipcodeController extends Controller
      *
      * @return 
      */
-    public function getLocation($d_codigo)
+    public function getLocation($zipcode)
     {
         //
-        $location = Zipcode::where('d_codigo', $d_codigo)->get();
+        $location = Zipcode::where('zip_code', $zipcode)->with('settlements')->first();
 
+        
+    
         return $location;
     }
 
